@@ -1,0 +1,12 @@
+.main-heading {
+  font-size: 3em;
+}
+
+@media screen and (min-width: 480px) {
+  .menu-text {
+    display: inline;
+  }
+  .main-heading {
+    font-size: 6em;
+  }
+}

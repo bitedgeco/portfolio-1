@@ -47,3 +47,10 @@ table {
 	border-spacing: 0;
 }
 /*---------------------------------------*/
+header {
+  text-align: center;
+}
+
+.main-heading {
+  font-size: 6em;
+}
