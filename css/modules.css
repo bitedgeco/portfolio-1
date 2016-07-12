@@ -6,8 +6,6 @@
   .menu-text {
     display: inline;
     position: relative;
-    top: -10px;
-    margin-left: 0.2em;
     margin-right: .8em;
   }
 
@@ -22,11 +20,21 @@
   .my-pic {
   }
 
+  .ext-icon {
+    max-width: 64px;
+  }
+
+  #social {
+    top: 10%;
+    left: 10%;
+  }
+
   ul li {
     display: inline;
   }
 
   .nav-menu li {
     display: inline;
+    width: 100%;
   }
 }

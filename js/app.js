@@ -2,9 +2,9 @@ function main() {
   if (window.innerWidth <= 680) { //if on mobile device..
     $('#main').accordion();
   }
+  //other functionality later...
 }
 
-$(document).ready(main);
 window.onresize = function() {
   if (window.innerWidth <= 680) {
     main();
@@ -12,3 +12,5 @@ window.onresize = function() {
     $('#main').accordion('destroy');
   }
 };
+
+$(document).ready(main);
