@@ -2,11 +2,18 @@
   font-size: 3em;
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 680px) { /*if viewed on larger screen*/
   .menu-text {
     display: inline;
+    position: relative;
+    top: -10px;
+    margin-left: 0.2em;
+    margin-right: .8em;
   }
   .main-heading {
     font-size: 6em;
+  }
+  .my-pic {
+
   }
 }
