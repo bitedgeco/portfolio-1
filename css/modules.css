@@ -1,0 +1,40 @@
+.main-heading {
+  font-size: 3em;
+}
+
+@media screen and (min-width: 680px) { /*if viewed on larger screen*/
+  .menu-text {
+    display: inline;
+    position: relative;
+    margin-right: .8em;
+  }
+
+  .sub-headings {
+    font-size: 3em;
+  }
+
+  .main-heading {
+    font-size: 6em;
+  }
+
+  .my-pic {
+  }
+
+  .ext-icon {
+    max-width: 64px;
+  }
+
+  #social {
+    top: 10%;
+    left: 10%;
+  }
+
+  ul li {
+    display: inline;
+  }
+
+  .nav-menu li {
+    display: inline;
+    width: 100%;
+  }
+}

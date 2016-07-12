@@ -1,0 +1,41 @@
+.menu-text {
+
+}
+
+.main-heading {
+  font-size: 6em;
+}
+
+.my-pic {
+  max-width: 70%;
+}
+
+.ext-icon {
+  max-width: 32px;
+  position: relative;
+  display: block;
+}
+
+.nav-menu li {
+  display: none;
+}
+
+.nav-icon {
+  width: 10%;
+  margin-left: 1em;
+}
+
+.sub-headings {
+  margin: .5em auto;
+}
+
+#main {
+  text-align: center;
+  margin: 1% 10%;
+}
+
+#social {
+  position: absolute;
+  top: 10%;
+  left: 2.5%;
+}
