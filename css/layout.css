@@ -1,7 +1,3 @@
-.menu-text {
-
-}
-
 .main-heading {
   font-size: 6em;
 }
@@ -20,6 +16,10 @@
   display: none;
 }
 
+.nav-menu {
+  background-color: white;
+}
+
 .nav-icon {
   width: 10%;
   margin-left: 1em;
@@ -31,7 +31,9 @@
 
 #main {
   text-align: center;
-  margin: 1% 10%;
+  margin: 1% 15%;
+  background-color: #384038;
+  color: white;
 }
 
 #social {

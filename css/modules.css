@@ -2,6 +2,27 @@
   font-size: 3em;
 }
 
+#main .ui-accordion-content {
+  font-family: 'Jura', sans-serif;
+  background-color: #A8BFA7;
+  font-weight: bold;
+}
+
+#main .ui-accordion-header {
+  font-family: 'Jura', sans-serif;
+  font-weight: bold;
+  background-color: #384038;
+  color: black;
+}
+
+#main .ui-accordion-header:hover{
+  color: white;
+}
+
+#main .ui-state-active {
+  color: white;
+}
+
 @media screen and (min-width: 680px) { /*if viewed on larger screen*/
   .menu-text {
     display: inline;
@@ -35,6 +56,6 @@
 
   .nav-menu li {
     display: inline;
-    width: 100%;
+    margin: 1em 1em;
   }
 }
