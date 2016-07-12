@@ -49,8 +49,12 @@ table {
 /*---------------------------------------*/
 header {
   text-align: center;
+	color: black;
+	background-color: white;
 }
 
 body {
-  font: 1em Helvetica, sans-serif;
+  font-size: 1em;
+	font-family: 'Jura', sans-serif;
+	background-color: white;
 }
