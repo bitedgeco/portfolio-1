@@ -8,6 +8,12 @@ function Entry(name, section, navImg, text) {
   this.text = text;
 }
 
+function addNewEntry(name, section, navImg, text) {
+  var entry = new Entry(name, section, navImg, text);
+  entries.push(entry);
+  entry.toHTML();
+}
+
 Entry.prototype.toHTML = function() {
   $('<li><a href="#' + this.name + '"><img src="' + this.navImg + '" class="nav-icon"/></a></li>').appendTo('.nav-menu');
   $('<a name="'+ this.name + '">').appendTo($main);
