@@ -19,8 +19,7 @@ Entry.prototype.toHTML = function() {
   // nav icon
   $('<li><a href="#' + this.name + '"><img src="' + this.navImg + '" class="nav-icon"/></a></li>').appendTo('.nav-menu');
   // section
-  // $('<a name="'+ this.name + '">').appendTo($main); //nedtofix
-  $('<h3 class="sub-headings">' + this.section + '</h3>').appendTo($main);
+  $('<h3 class="sub-headings">' + '<a name="'+ this.name + '"></a>' + this.section + '</h3>').appendTo($main);
   $('<div><p>' + this.text + '</p></div>').appendTo($main);
   //todo: set all nav img sizes to 600/#entries
 };
