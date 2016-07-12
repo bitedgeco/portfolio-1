@@ -54,7 +54,8 @@ header {
 }
 
 body {
-  font-size: 1em;
+  font-size: 1.1em;
 	font-family: 'Jura', sans-serif;
 	background-color: white;
+	max-width: 980px;
 }
