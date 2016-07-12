@@ -1,9 +1,5 @@
-ul li {
-  display: inline-block;
-}
-
 .menu-text {
-  display: none;
+
 }
 
 .main-heading {
@@ -18,13 +14,17 @@ ul li {
   max-width: 10%;
 }
 
-.nav-menu li { /* todo: add spacing for li's */
-  display: inline;
+.nav-menu li {
+  display: none;
 }
 
 .nav-icon {
   width: 10%;
   margin-left: 1em;
+}
+
+.sub-headings {
+  margin: .5em auto;
 }
 
 #main {

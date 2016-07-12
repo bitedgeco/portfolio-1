@@ -10,10 +10,23 @@
     margin-left: 0.2em;
     margin-right: .8em;
   }
+
+  .sub-headings {
+    font-size: 3em;
+  }
+
   .main-heading {
     font-size: 6em;
   }
-  .my-pic {
 
+  .my-pic {
+  }
+
+  ul li {
+    display: inline;
+  }
+
+  .nav-menu li {
+    display: inline;
   }
 }
