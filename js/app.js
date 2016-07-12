@@ -5,3 +5,10 @@ function main() {
 }
 
 $(document).ready(main);
+window.onresize = function() {
+  if (window.innerWidth <= 680) {
+    main();
+  } else {
+    $('#main').accordion('destroy');
+  }
+};
