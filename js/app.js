@@ -3,7 +3,7 @@
 /////////////////////////////////////////////
 
 function generateContent() {
-  //adds template, removes current content and updates with information in entries, removes template
+  //adds template, removes current content and updates with information in entries, removes template, sets nav img sizes
   htmlEntries = [];
   $('#main').html('<entry class="template"><h3 class="sub-headings"><a class="anchor" name="namehere"></a>section</h3><div><p>content here</p></div></entry>');
   $('.nav-menu').html('');
@@ -13,11 +13,11 @@ function generateContent() {
   htmlEntries.forEach(function(e) {
     $('#main').append(e.toHTML());
     if (e.navImg) {
-      console.log('img true');
       $('.nav-menu').append('<li><a href=\"#' + e.name + '\"><img src=\"' + e.navImg + '\" class=\"nav-icon\"/></a></li>');
     }
   });
   $('.template').remove();
+  // todo: set all nav img sizes to 600px/#entries
 }
 
 function addNewEntry(name1, section1, date1, text1, navImg1) {

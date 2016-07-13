@@ -11,7 +11,6 @@ function Entry(info) {
   }
 }
 
-// //todo: set all nav img sizes to 600px/#entries
 Entry.prototype.toHTML = function() {
   var $newEntry = $('entry.template').clone();
   $newEntry.removeClass();
