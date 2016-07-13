@@ -1,3 +1,12 @@
+div p {
+  margin-bottom: 2em;
+}
+
+.template {
+  display: none;
+}
+
+
 .main-heading {
   font-size: 6em;
 }
@@ -26,12 +35,13 @@
 }
 
 .sub-headings {
-  margin: .5em auto;
+  margin: 0 auto .1em auto;
 }
 
 #main {
   text-align: center;
   margin: 1% 15%;
+  padding: 2% 4%;
   background-color: #384038;
   color: white;
 }
@@ -39,5 +49,5 @@
 #social {
   position: absolute;
   top: 10%;
-  left: 2.5%;
+  left: 10%;
 }

@@ -38,16 +38,12 @@
     font-size: 6em;
   }
 
-  .my-pic {
+  #social {
+    left: 10%;
   }
 
   .ext-icon {
     max-width: 64px;
-  }
-
-  #social {
-    top: 10%;
-    left: 10%;
   }
 
   ul li {
@@ -56,6 +52,9 @@
 
   .nav-menu li {
     display: inline;
-    margin: 1em 1em;
+  }
+
+  div a p {
+    margin-bottom: 2%;
   }
 }
