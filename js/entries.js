@@ -5,21 +5,14 @@ function Entry(info) {
   this.name = info.name;
   this.section = info.section;
   this.date = info.date;
-  this.navImg = 'img/' + info.navImg;
   this.text = info.text;
+  if (info.navImg) {
+    this.navImg = 'img/' + info.navImg;
+  }
 }
 
-function addNewEntry(name, section, date, navImg, text) {
-  var entry = new Entry(name, section, date, navImg, text);
-  entries.push(entry);
-  entry.toHTML();
-}
-
+// //todo: set all nav img sizes to 600px/#entries
 Entry.prototype.toHTML = function() {
-  // nav icon
-  // $('<li><a href="#' + this.name + '"><img src="' + this.navImg + '" class="nav-icon"/></a></li>').appendTo('.nav-menu');
-
-  // //todo: set all nav img sizes to 600/#entries
   var $newEntry = $('entry.template').clone();
   $newEntry.removeClass();
   $newEntry.attr('class', this.name);
@@ -59,13 +52,3 @@ var entries = [
     text: 'When I\'m not coding, I have several hobbies keeping me busy.  I enjoy taking vacations, with my most recent trip being to Iceland.  It was one of the most beautiful places I have ever seen.  I also enjoy brewing beer.  I am currently fermenting a ginger beer for the first time.  For video games, I have been playing Fallout 4 and dying a lot in Dark Souls III.  I am also in one of the most in-depth fantasy football leagues ever made.'
   }
 ];
-
-// entries.forEach(function(e) {
-//   htmlEntries.push(new Entry(e));
-// });
-//
-// htmlEntries.forEach(function(e) {
-//   $('#main').append(e.toHTML());
-// });
-
-// $('.template').remove();
