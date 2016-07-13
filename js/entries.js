@@ -1,4 +1,5 @@
 var htmlEntries = [];
+var numImages = 0;
 
 // Entry object
 function Entry(info) {
@@ -8,6 +9,7 @@ function Entry(info) {
   this.text = info.text;
   if (info.navImg) {
     this.navImg = 'img/' + info.navImg;
+    numImages++;
   }
 }
 
