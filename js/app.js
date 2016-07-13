@@ -7,14 +7,19 @@ function generateContent() {
   //adds template, removes current content and updates with information in entries, removes template, sets nav img sizes
   htmlEntries = [];
   numImages = 0;
+
   $('#main').html('<entry class="template"><h3 class="sub-headings"><a class="anchor" name="namehere"></a>section</h3><div><time pubdate datetime="2000-01-01">Publish Time</time><p>content here</p></div></entry>');
   $('.nav-menu').html('');
-  entries.sort(function(a,b) {
-    return (new Date(b.date)) - (new Date(a.date));
-  });
+
+
   entries.forEach(function(e) {
     htmlEntries.push(new Entry(e));
   });
+
+  htmlEntries.sort(function(a,b) {
+    return (new Date(b.date)) - (new Date(a.date));
+  });
+
   htmlEntries.forEach(function(e) {
     $('#main').append(e.toHTML());
     if (e.navImg) {
@@ -23,6 +28,7 @@ function generateContent() {
       console.log('no image supplied');
     }
   });
+
   $('.template').remove();
   // resizes nav images for when more populate
   var x = (450 / numImages).toString() + 'px';
@@ -32,9 +38,9 @@ function generateContent() {
 }
 
 function addNewEntry(name1, section1, text1, navImg1) {
+  var date1 = new Date();
   var entry = new Entry({name: name1, section: section1, date: date1, text: text1, navImg: navImg1});
   entries.push(entry);
-  entry.toHTML();
   generateContent();
 }
 
