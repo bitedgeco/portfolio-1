@@ -1,6 +1,7 @@
 // Main file for portfolio
 // David Smith
 /////////////////////////////////////////////
+var numImages = 0;
 
 function generateContent() {
   //adds template, removes current content and updates with information in entries, removes template, sets nav img sizes
@@ -8,6 +9,9 @@ function generateContent() {
   numImages = 0;
   $('#main').html('<entry class="template"><h3 class="sub-headings"><a class="anchor" name="namehere"></a>section</h3><div><p>content here</p></div></entry>');
   $('.nav-menu').html('');
+  entries.sort(function(a,b) {
+    return ((new Date(b.date)) - (new Date(a.date)) / 1000 / 60 / 60 / 24);
+  });
   entries.forEach(function(e) {
     htmlEntries.push(new Entry(e));
   });
