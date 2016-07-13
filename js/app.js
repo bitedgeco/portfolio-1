@@ -3,6 +3,7 @@
 /////////////////////////////////////////////
 
 function generateContent() {
+  $('#main').html('<entry class="template"><h3 class="sub-headings"><a class="anchor" name="namehere"></a>section</h3><div><p>content here</p></div></entry>');
   $('.nav-menu').html('');
   entries.forEach(function(e) {
     htmlEntries.push(new Entry(e));
@@ -16,10 +17,10 @@ function generateContent() {
 }
 
 function main() {
+  generateContent();
   if (window.innerWidth <= 680) { //if on mobile device..
     $('#main').accordion();
   }
-  generateContent();
 }
 
 window.onresize = function() {
