@@ -4,7 +4,7 @@ var htmlEntries = [];
 function Entry(info) {
   this.name = info.name;
   this.section = info.section;
-  this.date = info.date;
+  this.date = new Date();
   this.text = info.text;
   if (info.navImg) {
     this.navImg = 'img/' + info.navImg;
@@ -18,6 +18,9 @@ Entry.prototype.toHTML = function() {
   $newEntry.attr('class', this.name);
   $newEntry.find('h3').html('<a name="' + this.name + '"></a>' + this.section);
   $newEntry.find('p').text(this.text);
+  $newEntry.find('time[pubdate]').attr('title', this.date);
+  $newEntry.find('time').html('about ' + parseInt((new Date() - new Date(this.date))/60/60/24/1000) + ' days ago');
+
   return $newEntry.children();  //putting children() here removes entry tag for accordion menu to work
 };
 
