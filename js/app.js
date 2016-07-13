@@ -23,7 +23,7 @@ function generateContent() {
   // resizes nav images for when more populate
   var x = (450 / numImages).toString() + 'px';
   $('.nav-menu img').width(x);
-  var m = (80 / numImages).toString() + 'px';
+  var m = (60 / numImages).toString() + 'px';
   $('.nav-menu img').css('margin-left', m);
 }
 
