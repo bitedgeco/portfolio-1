@@ -58,4 +58,5 @@ body {
 	font-family: 'Jura', sans-serif;
 	background-color: white;
 	max-width: 980px;
+	min-width: 320px;
 }
