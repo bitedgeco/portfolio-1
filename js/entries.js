@@ -17,14 +17,13 @@ function addNewEntry(name, section, date, navImg, text) {
 
 Entry.prototype.toHTML = function() {
   // nav icon
-  $('<li><a href="#' + this.name + '"><img src="' + this.navImg + '" class="nav-icon"/></a></li>').appendTo('.nav-menu');
+  // $('<li><a href="#' + this.name + '"><img src="' + this.navImg + '" class="nav-icon"/></a></li>').appendTo('.nav-menu');
 
   // //todo: set all nav img sizes to 600/#entries
   var $newEntry = $('entry.template').clone();
   $newEntry.removeClass();
   $newEntry.attr('class', this.name);
   $newEntry.find('h3').html('<a name="' + this.name + '"></a>' + this.section);
-  // $newEntry.find('h3').text(this.section);
   $newEntry.find('p').text(this.text);
   return $newEntry.children();  //putting children() here removes entry tag for accordion menu to work
 };
@@ -61,12 +60,12 @@ var entries = [
   }
 ];
 
-entries.forEach(function(e) {
-  htmlEntries.push(new Entry(e));
-});
+// entries.forEach(function(e) {
+//   htmlEntries.push(new Entry(e));
+// });
+//
+// htmlEntries.forEach(function(e) {
+//   $('#main').append(e.toHTML());
+// });
 
-htmlEntries.forEach(function(e) {
-  $('#main').append(e.toHTML());
-});
-
-$('.template').remove();
+// $('.template').remove();
