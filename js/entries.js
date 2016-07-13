@@ -23,8 +23,8 @@ Entry.prototype.toHTML = function() {
   var $newEntry = $('entry.template').clone();
   $newEntry.removeClass();
   $newEntry.attr('class', this.name);
-  // $newEntry.find('h3').html('<a name="' + this.name + '"></a>' + this.section);
-  $newEntry.find('h3').text(this.section);
+  $newEntry.find('h3').html('<a name="' + this.name + '"></a>' + this.section);
+  // $newEntry.find('h3').text(this.section);
   $newEntry.find('p').text(this.text);
   return $newEntry.children();  //putting children() here removes entry tag for accordion menu to work
 };
