@@ -1,10 +1,11 @@
+div p {
+  margin-bottom: 2em;
+}
+
 .template {
   display: none;
 }
 
-div p {
-  margin-bottom: 2em;
-}
 
 .main-heading {
   font-size: 6em;
@@ -48,5 +49,5 @@ div p {
 #social {
   position: absolute;
   top: 10%;
-  left: 2.5%;
+  left: 10%;
 }
