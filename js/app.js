@@ -1,14 +1,11 @@
 // Main file for portfolio
 // David Smith
 /////////////////////////////////////////////
-//Global Vars
-
-/////////////////////
 
 function loadContent() {  //Load entries into web page via jQuery
-  for (var e = 0; e < entries.length; e++) {
-    entries[e].toHTML();
-  }
+  // for (var e = 0; e < entries.length; e++) {
+  //   entries[e].toHTML();
+  // }
 }
 
 function main() {
