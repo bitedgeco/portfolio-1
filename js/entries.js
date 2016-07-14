@@ -16,7 +16,7 @@ function Img(name, url) {
   var t = this; //used to reference later inside a method
 
   this.clickEvent = function(img) {
-    console.log(img + ' clicked');
+    generateContent(img);
   };
 
   this.createListener = function(imgID) { //find <img> with id matching e, add listener to it

@@ -21,6 +21,12 @@ div p {
   display: block;
 }
 
+#home {
+  max-width: 32px;
+  position: relative;
+  display: block;
+}
+
 .nav-menu li {
   display: none;
 }

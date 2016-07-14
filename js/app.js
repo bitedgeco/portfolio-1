@@ -3,10 +3,28 @@
 /////////////////////////////////////////////
 var numImages = 0;
 
-function generateContent() {
+function generateContent(img) {
   //adds template, removes current content and updates with information in entries, removes template, sets nav img sizes
-  var htmlEntries = [];  //tmp array constructed to refresh content upon entries changes and append to page
+  var htmlEntries = [];  //array constructed to refresh content upon entries changes and append to page
   numImages = 0;
+
+  if (img) {
+    for(var i = 0; i < entries.length; i++) {
+      if (entries[i].name === img) {
+        $('#main').html('<entry class="template"><h3 class="sub-headings"><a class="anchor" name="namehere"></a>section</h3><div><time pubdate datetime="2000-01-01">Publish Time</time><p>content here</p></div></entry>');
+        htmlEntries.push(new Entry(entries[i]));
+        htmlEntries.sort(function(a,b) {
+          return (new Date(b.date)) - (new Date(a.date));
+        });
+        htmlEntries.forEach(function(e) {
+          $('#main').append(e.toHTML());
+        });
+      }
+    };
+    $('.template').remove();
+    return;
+  }
+
 
   $('#main').html('<entry class="template"><h3 class="sub-headings"><a class="anchor" name="namehere"></a>section</h3><div><time pubdate datetime="2000-01-01">Publish Time</time><p>content here</p></div></entry>');
   $('.nav-menu').html('');
@@ -18,7 +36,7 @@ function generateContent() {
   htmlEntries.sort(function(a,b) {
     return (new Date(b.date)) - (new Date(a.date));
   });
-//todo: make img an object with name property and onclick event!
+
   htmlEntries.forEach(function(e) {
     $('#main').append(e.toHTML());
     if (e.navImg) {
@@ -56,6 +74,15 @@ window.onresize = function() {
 
 function main() {
   generateContent();
+
+  $('#home').on('click', function() {
+    generateContent();
+    if ($('#main').hasClass('ui-accordion')) {
+      $('#main').accordion('destroy');
+      $('#main').accordion();
+    }
+  });
+
   if (window.innerWidth <= 680) {
     $('#main').accordion();
   }

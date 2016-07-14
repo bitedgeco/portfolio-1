@@ -42,6 +42,10 @@
     left: 10%;
   }
 
+  #home {
+    max-width: 64px;
+  }
+
   .ext-icon {
     max-width: 64px;
   }
