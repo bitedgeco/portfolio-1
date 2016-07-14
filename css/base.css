@@ -60,3 +60,12 @@ body {
 	max-width: 980px;
 	min-width: 320px;
 }
+
+time {
+	display: block;
+	margin-bottom: 1em;
+}
+
+img:hover {
+	cursor: pointer;
+}

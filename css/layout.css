@@ -21,6 +21,12 @@ div p {
   display: block;
 }
 
+#home {
+  max-width: 32px;
+  position: relative;
+  display: block;
+}
+
 .nav-menu li {
   display: none;
 }
@@ -49,5 +55,5 @@ div p {
 #social {
   position: absolute;
   top: 10%;
-  left: 10%;
+  left: 2.5%;
 }
