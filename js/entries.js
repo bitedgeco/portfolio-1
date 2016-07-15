@@ -27,7 +27,7 @@ function Img(name, url) {
         $thisImg = $(this);
       }
     });
-    $thisImg.on('click', function() {
+    $thisImg.on('click', function() { //todo: setTimeout here to prevent clicking too fast
       t.clickEvent(imgID);
     });
   };
