@@ -30,7 +30,7 @@ function generateContent(img) {
     for(var i = 0; i < entries.length; i++) {
       if (entries[i].name === img) {
         $('#main').hide();
-        $('#main').html('<entry class="template"><h3 class="sub-headings"><a class="anchor" name="namehere"></a>section</h3><div><time pubdate datetime="2000-01-01">Publish Time</time><p>content here</p></div></entry>');
+        $('#main').html('');  //check necessary
         htmlEntries.push(new Entry(entries[i]));
         htmlEntries.sort(function(a,b) {
           return (new Date(b.date)) - (new Date(a.date));
@@ -42,11 +42,10 @@ function generateContent(img) {
         $('#main').fadeIn();
       }
     };
-    $('.template').remove();
     return;
   }
   //if no navImg given
-  $('#main').html('<entry class="template"><h3 class="sub-headings"><a class="anchor" name="namehere"></a>section</h3><div><time pubdate datetime="2000-01-01">Publish Time</time><p>content here</p></div></entry>');
+  $('#main').html('');
   $('.nav-menu').html('');
 
   entries.forEach(function(e) {
@@ -62,8 +61,7 @@ function generateContent(img) {
   });
 
   genNavImages(entries);
-  adjustNavImageSize();
-  $('.template').remove();
+  adjustNavImageSize();  //does not work when put into genNavImages func ?
 }
 
 function addNewEntry(name1, section1, text1, navImg1) {

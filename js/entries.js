@@ -42,16 +42,9 @@ function Img(name, url) {
 
 
 Entry.prototype.toHTML = function() {
-  var $newEntry = $('entry.template').clone();
-  $newEntry.removeClass();
-  $newEntry.attr('class', this.name);
-  $newEntry.find('h3').html('<a name="' + this.name + '"></a>' + this.section);
-  $newEntry.find('p').text(this.text);
-  $newEntry.find('time').attr('pubdate', this.date);
-  $newEntry.find('time[pubdate]').attr('title', this.date);
-  $newEntry.find('time').html('-posted about ' + parseInt(Math.round((new Date() - new Date(this.date))/60/60/24/1000)) + ' days ago');
+  this.publishStatus = parseInt(Math.round((new Date() - new Date(this.date))/60/60/24/1000));
 
-  return $newEntry.children();  //putting children() here removes entry tag for accordion menu to work
+  return Handlebars.compile($('#entry-template').html())(this);
 };
 
 // Entries
