@@ -11,6 +11,16 @@ function adjustNavImageSize() {
   $('.nav-menu img').css('margin-left', m);
 }
 
+function genNavImages(entries1) {
+  $('.nav-menu').html('');
+  entries1.forEach(function(e) {
+    if (e.navImg) {
+      console.log('had img', e);
+      e.navImg.renderImg(e.navImg);
+    }
+  });
+}
+
 function generateContent(img) {
   //adds template, removes current content and updates with information in entries, removes template, sets nav img sizes
   var htmlEntries = [];  //array constructed to refresh content upon entries changes and append to page
@@ -28,6 +38,7 @@ function generateContent(img) {
         htmlEntries.forEach(function(e) {
           $('#main').append(e.toHTML());
         });
+        genNavImages(entries);
         $('#main').fadeIn();
       }
     };
@@ -48,13 +59,9 @@ function generateContent(img) {
 
   htmlEntries.forEach(function(e) {
     $('#main').append(e.toHTML());
-    if (e.navImg) {
-      e.navImg.renderImg(e.navImg);
-    } else {
-      console.log('no nav image supplied');
-    }
   });
 
+  genNavImages(entries);
   $('.template').remove();
   adjustNavImageSize();
 }
@@ -71,11 +78,12 @@ window.onresize = function() {
   // adjustNavImageSize(); broken
   if (window.innerWidth <= 680) {
     generateContent();
-    $('#main').accordion(); // this look ridiculous, but for whatever reason, it must be initialized, destroyed, then re-initialized to work when resizing back and forth
+    $('#main').accordion(); // it must be initialized, destroyed, then re-initialized to work when resizing back and forth
     $('#main').accordion('destroy');
     $('#main').accordion();
-    $('.nav-menu').html('');  //need to come back when back to big screen (after else)
+    $('.nav-menu').html('');
   } else {
+    genNavImages(entries);
     if ($('#main').hasClass('ui-accordion')) {
       $('#main').accordion('destroy');
     }
