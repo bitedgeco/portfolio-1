@@ -4,6 +4,7 @@
 var numImages = 0;  //used to calc nav img sizes, ++ in Entry constructor
 
 function adjustNavImageSize() {
+  console.log('adjust nav called');
   // resizes nav images for when more populate
   var x = (450 / numImages).toString() + 'px';
   $('.nav-menu img').width(x);
@@ -61,7 +62,6 @@ function generateContent(img) {
   });
 
   genNavImages(entries);
-  adjustNavImageSize();  //does not work when put into genNavImages func ?
 }
 
 function addNewEntry(name1, section1, text1, navImg1) {
@@ -69,6 +69,7 @@ function addNewEntry(name1, section1, text1, navImg1) {
   var entry = new Entry({name: name1, section: section1, date: date1, text: text1, navImg: navImg1});
   entries.push(entry);
   generateContent();
+  adjustNavImageSize();
 }
 
 
@@ -90,7 +91,6 @@ window.onresize = function() {
 
 function main() {
   generateContent();
-
   $('#home').on('click', function() {
     generateContent();
     if ($('#main').hasClass('ui-accordion')) {
