@@ -68,9 +68,10 @@ function addNewEntry(name1, section1, text1, navImg1) {
 
 
 window.onresize = function() {
-  adjustNavImageSize();
+  // adjustNavImageSize(); broken
   if (window.innerWidth <= 680) {
     $('#main').accordion();
+    $('.nav-menu').html('');  //need to come back
   } else {
     if ($('#main').hasClass('ui-accordion')) {
       $('#main').accordion('destroy');
