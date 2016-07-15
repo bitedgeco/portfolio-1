@@ -3,9 +3,11 @@
 }
 
 #main .ui-accordion-content {
+  padding: 0 .75em 0 .75em;
   font-family: 'Jura', sans-serif;
   background-color: #A8BFA7;
   font-weight: bold;
+  font-size: 1em;
 }
 
 #main .ui-accordion-header {
@@ -60,5 +62,10 @@
 
   div a p {
     margin-bottom: 2%;
+  }
+
+  div > p {
+    line-height: 1.5em;
+    font-size: 1.2em;
   }
 }
