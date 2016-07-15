@@ -27,7 +27,7 @@ function Img(name, url) {
         $thisImg = $(this);
       }
     });
-    $thisImg.on('click', function() {
+    $thisImg.on('click', function() { //todo: setTimeout here to prevent clicking too fast
       t.clickEvent(imgID);
     });
   };
@@ -42,16 +42,9 @@ function Img(name, url) {
 
 
 Entry.prototype.toHTML = function() {
-  var $newEntry = $('entry.template').clone();
-  $newEntry.removeClass();
-  $newEntry.attr('class', this.name);
-  $newEntry.find('h3').html('<a name="' + this.name + '"></a>' + this.section);
-  $newEntry.find('p').text(this.text);
-  $newEntry.find('time').attr('pubdate', this.date);
-  $newEntry.find('time[pubdate]').attr('title', this.date);
-  $newEntry.find('time').html('-posted about ' + parseInt(Math.round((new Date() - new Date(this.date))/60/60/24/1000)) + ' days ago');
+  this.publishStatus = parseInt(Math.round((new Date() - new Date(this.date))/60/60/24/1000));
 
-  return $newEntry.children();  //putting children() here removes entry tag for accordion menu to work
+  return Handlebars.compile($('#entry-template').html())(this);
 };
 
 // Entries
@@ -68,7 +61,7 @@ var entries = [
     section: 'Education',
     date: '2016-07-12',
     navImg: new Img('edu', 'edu.png'),
-    text: 'I graduated in 2015 with a B.S. in chemistry and a B.A. in biochemistry from the University of Washington.  My favorite subjects were chemical biology, quantitative analysis, and statistical mechanics.  I joined Code Fellows in the summer of 2016, and am currently on track to learn Python.  If you click onmy GitHub link at the top of the page, you can see some of the projects that I have been working on.'
+    text: 'I graduated in 2015 with a B.S. in chemistry and a B.A. in biochemistry from the University of Washington.  My favorite subjects were chemical biology, quantitative analysis, and statistical mechanics.  I joined Code Fellows in the summer of 2016, and am currently on track to learn Python.  If you click on my GitHub link at the top of the page, you can see some of the projects that I have been working on.'
   },
   {
     name: 'exp',

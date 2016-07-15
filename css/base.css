@@ -54,6 +54,8 @@ header {
 }
 
 body {
+	text-align: center;
+	margin: 0 auto;
   font-size: 1.1em;
 	font-family: 'Jura', sans-serif;
 	background-color: white;
@@ -64,6 +66,18 @@ body {
 time {
 	display: block;
 	margin-bottom: 1em;
+}
+
+h1 {
+	font-size: 1.5em;
+}
+
+h2 {
+	font-size: 1.5em;
+}
+
+h3 {
+	font-size: 1.5em;
 }
 
 img:hover {
