@@ -68,7 +68,7 @@ var entries = [
     section: 'Education',
     date: '2016-07-12',
     navImg: new Img('edu', 'edu.png'),
-    text: 'I graduated in 2015 with a B.S. in chemistry and a B.A. in biochemistry from the University of Washington.  My favorite subjects were chemical biology, quantitative analysis, and statistical mechanics.  I joined Code Fellows in the summer of 2016, and am currently on track to learn Python.  If you click onmy GitHub link at the top of the page, you can see some of the projects that I have been working on.'
+    text: 'I graduated in 2015 with a B.S. in chemistry and a B.A. in biochemistry from the University of Washington.  My favorite subjects were chemical biology, quantitative analysis, and statistical mechanics.  I joined Code Fellows in the summer of 2016, and am currently on track to learn Python.  If you click on my GitHub link at the top of the page, you can see some of the projects that I have been working on.'
   },
   {
     name: 'exp',

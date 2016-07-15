@@ -34,7 +34,7 @@ function generateContent(img) {
     $('.template').remove();
     return;
   }
-
+  //no navImg given
   $('#main').html('<entry class="template"><h3 class="sub-headings"><a class="anchor" name="namehere"></a>section</h3><div><time pubdate datetime="2000-01-01">Publish Time</time><p>content here</p></div></entry>');
   $('.nav-menu').html('');
 
@@ -51,7 +51,7 @@ function generateContent(img) {
     if (e.navImg) {
       e.navImg.renderImg(e.navImg);
     } else {
-      console.log('no image supplied');
+      console.log('no nav image supplied');
     }
   });
 
@@ -70,8 +70,11 @@ function addNewEntry(name1, section1, text1, navImg1) {
 window.onresize = function() {
   // adjustNavImageSize(); broken
   if (window.innerWidth <= 680) {
+    generateContent();
+    $('#main').accordion(); // this look ridiculous, but for whatever reason, it must be initialized, destroyed, then re-initialized to work when resizing back and forth
+    $('#main').accordion('destroy');
     $('#main').accordion();
-    $('.nav-menu').html('');  //need to come back
+    $('.nav-menu').html('');  //need to come back when back to big screen (after else)
   } else {
     if ($('#main').hasClass('ui-accordion')) {
       $('#main').accordion('destroy');
