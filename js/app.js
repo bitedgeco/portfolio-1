@@ -1,7 +1,7 @@
 // Main file for portfolio
 // David Smith
 /////////////////////////////////////////////
-var numImages = 0;
+var numImages = 0;  //used to calc nav img sizes, ++ in Entry constructor
 
 function adjustNavImageSize() {
   // resizes nav images for when more populate
@@ -15,7 +15,6 @@ function genNavImages(entries1) {
   $('.nav-menu').html('');
   entries1.forEach(function(e) {
     if (e.navImg) {
-      console.log('had img', e);
       e.navImg.renderImg(e.navImg);
     }
   });
@@ -23,8 +22,8 @@ function genNavImages(entries1) {
 
 function generateContent(img) {
   //adds template, removes current content and updates with information in entries, removes template, sets nav img sizes
-  var htmlEntries = [];  //array constructed to refresh content upon entries changes and append to page
   numImages = 0;
+  var htmlEntries = [];  //array constructed to refresh content upon entries changes and append to page
 
   if (img) {  //if img parameter was given by navImg event handler
     for(var i = 0; i < entries.length; i++) {
@@ -75,17 +74,17 @@ function addNewEntry(name1, section1, text1, navImg1) {
 
 
 window.onresize = function() {
-  // adjustNavImageSize(); broken
+  var $mainID = $('#main');
   if (window.innerWidth <= 680) {
     generateContent();
-    $('#main').accordion(); // it must be initialized, destroyed, then re-initialized to work when resizing back and forth
-    $('#main').accordion('destroy');
-    $('#main').accordion();
+    $mainID.accordion(); // it must be initialized, destroyed, then re-initialized to work when resizing back and forth
+    $mainID.accordion('destroy');
+    $mainID.accordion();
     $('.nav-menu').html('');
   } else {
     genNavImages(entries);
-    if ($('#main').hasClass('ui-accordion')) {
-      $('#main').accordion('destroy');
+    if ($mainID.hasClass('ui-accordion')) {
+      $mainID.accordion('destroy');
     }
   }
 };
