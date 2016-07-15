@@ -11,6 +11,7 @@ function adjustNavImageSize() {
   $('.nav-menu img').css('margin-left', m);
 }
 
+// ex: addNewEntry('hello', 'test-header', 'content goes here', new Img('hello', 'fb.png'));
 function genNavImages(entries1) {
   $('.nav-menu').html('');
   entries1.forEach(function(e) {
@@ -44,7 +45,7 @@ function generateContent(img) {
     $('.template').remove();
     return;
   }
-  //no navImg given
+  //if no navImg given
   $('#main').html('<entry class="template"><h3 class="sub-headings"><a class="anchor" name="namehere"></a>section</h3><div><time pubdate datetime="2000-01-01">Publish Time</time><p>content here</p></div></entry>');
   $('.nav-menu').html('');
 
@@ -61,8 +62,8 @@ function generateContent(img) {
   });
 
   genNavImages(entries);
-  $('.template').remove();
   adjustNavImageSize();
+  $('.template').remove();
 }
 
 function addNewEntry(name1, section1, text1, navImg1) {
